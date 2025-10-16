@@ -32,8 +32,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# IDE
-.vscode/
+# IDE (uncomment the line below if you don't want to share VS Code settings)
+# .vscode/
 .idea/
 *.swp
 *.swo

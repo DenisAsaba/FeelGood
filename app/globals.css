@@ -38,28 +38,52 @@
   }
   
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   /* Skip to content link for accessibility */
   .skip-to-content {
-    @apply absolute -top-40 left-6 z-50 px-4 py-2 bg-primary text-primary-foreground rounded-md;
-    @apply focus:top-6 transition-all duration-300;
+    position: absolute;
+    top: -10rem;
+    left: 1.5rem;
+    z-index: 50;
+    padding: 0.5rem 1rem;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+  }
+  
+  .skip-to-content:focus {
+    top: 1.5rem;
   }
 
   /* Glass morphism base styles */
   .glass {
-    @apply bg-opacity-10 backdrop-blur-md border border-white/20;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .glass-card {
-    @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-xl;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
   }
 
   .glass-button {
-    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg;
-    @apply hover:bg-white/20 transition-all duration-200;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .glass-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   /* Animation keyframes */
@@ -92,11 +116,16 @@
 
   /* Falling leaves animation */
   .falling-leaves-container {
-    @apply fixed inset-0 pointer-events-none overflow-hidden z-0;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
   }
 
   .falling-leaf {
-    @apply absolute opacity-60;
+    position: absolute;
+    opacity: 0.6;
     width: 10px;
     height: 10px;
     background: linear-gradient(45deg, hsl(var(--seasonal-primary)), hsl(var(--seasonal-secondary)));
@@ -143,7 +172,8 @@
     .glass,
     .glass-card,
     .glass-button {
-      @apply bg-background border-foreground;
+      background-color: hsl(var(--background));
+      border-color: hsl(var(--foreground));
       backdrop-filter: none;
     }
   }
@@ -154,14 +184,15 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-muted;
+    background-color: hsl(var(--muted));
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/50 rounded-full;
+    background-color: hsl(var(--muted-foreground) / 0.5);
+    border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/70;
+    background-color: hsl(var(--muted-foreground) / 0.7);
   }
 }
