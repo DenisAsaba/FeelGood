@@ -135,4 +135,8 @@ export const STORAGE_KEYS = {
   SEASON_OVERRIDE: 'micro-motivator-season-override',
   FIRST_VISIT: 'micro-motivator-first-visit',
   ANALYTICS: 'micro-motivator-analytics',
+  QUOTES: 'micro-motivator-quotes',
+  FAVORITE_QUOTES: 'micro-motivator-favorite-quotes',
+  QUOTE_PREFERENCES: 'micro-motivator-quote-preferences',
+  DAILY_QUOTE: 'micro-motivator-daily-quote',
 } as const;

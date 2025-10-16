@@ -131,3 +131,39 @@ export interface ProgressStats {
   favoriteSessionType: string;
   mostActiveTimeOfDay: string;
 }
+
+// Quote and motivation types
+export interface Quote {
+  id: string;
+  text: string;
+  author: string;
+  authorImage?: string;
+  characterCount: number;
+  htmlContent: string;
+  fetchedAt: Date;
+  category?: 'random' | 'daily' | 'seasonal' | 'favorite';
+  tags?: string[];
+  isFavorite?: boolean;
+  timesViewed?: number;
+}
+
+export interface QuoteCollection {
+  id: string;
+  name: string;
+  description: string;
+  quotes: Quote[];
+  createdAt: Date;
+  updatedAt: Date;
+  isDefault: boolean;
+}
+
+export interface QuotePreferences {
+  favoriteAuthors: string[];
+  dislikedAuthors: string[];
+  preferredCategories: string[];
+  maxCharacterCount?: number;
+  showAuthorImages: boolean;
+  autoRefreshInterval: number; // in minutes
+  enableDailyQuote: boolean;
+  quoteFontSize: 'small' | 'medium' | 'large';
+}

@@ -3,6 +3,8 @@
 import { useSeason } from '@/providers/SeasonProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { QuoteWidget } from '@/components/QuoteWidget';
+import Link from 'next/link';
 
 export default function HomePage() {
   const { currentSeason, isSeasonLocked, lockSeason, unlockSeason, availableSeasons } = useSeason();
@@ -20,6 +22,13 @@ export default function HomePage() {
             Experience mindfulness and motivation that changes with the seasons.
           </p>
         </div>
+
+        {/* Quote Widget - Main Feature */}
+        <QuoteWidget 
+          autoRefresh={true}
+          showDaily={true}
+          className="max-w-2xl mx-auto"
+        />
 
         {/* Season Control Card */}
         <Card className="glass-card">
@@ -68,47 +77,67 @@ export default function HomePage() {
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="glass-card">
             <CardHeader>
-              <CardTitle>🍃 Seasonal Theming</CardTitle>
+              <CardTitle>💫 Daily Motivation</CardTitle>
               <CardDescription>
-                Colors and animations that change with the seasons
+                Fresh inspirational quotes from ZenQuotes.io API
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="h-20 rounded-lg bg-gradient-to-r from-seasonal-primary/20 to-seasonal-secondary/20 border border-seasonal-accent/30" />
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Random motivational quotes</li>
+                <li>• Quote of the day</li>
+                <li>• Favorite quotes collection</li>
+                <li>• Share and copy functionality</li>
+              </ul>
             </CardContent>
           </Card>
 
           <Card className="glass-card">
             <CardHeader>
-              <CardTitle>♿ Accessibility First</CardTitle>
+              <CardTitle>🍃 Seasonal Experience</CardTitle>
               <CardDescription>
-                Built with accessibility and reduced motion support
+                Colors, animations, and themes that adapt to the seasons
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-3">
+              <div className="h-16 rounded-lg bg-gradient-to-r from-seasonal-primary/20 to-seasonal-secondary/20 border border-seasonal-accent/30" />
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Skip-to-content links</li>
-                <li>• Reduced motion support</li>
-                <li>• High contrast mode</li>
-                <li>• Keyboard navigation</li>
+                <li>• Automatic season detection</li>
+                <li>• Falling leaves in fall</li>
+                <li>• Accessibility & reduced motion</li>
+                <li>• Manual season override</li>
               </ul>
             </CardContent>
           </Card>
         </div>
 
-        {/* Getting Started */}
+        {/* Navigation & Actions */}
         <Card className="glass-card">
           <CardHeader>
-            <CardTitle>🚀 Getting Started</CardTitle>
+            <CardTitle>🚀 Explore More</CardTitle>
             <CardDescription>
-              Your seasonal micro-motivator is ready to inspire you
+              Discover additional features and build your quote collection
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">
-              This is your starting point for building a comprehensive micro-motivator application. 
-              The seasonal theming system is active and the accessibility features are in place. 
-              Add your motivational content, breathing exercises, and user features as needed.
+          <CardContent className="space-y-4">
+            <div className="flex flex-wrap gap-3">
+              <Button asChild variant="outline" className="glass-button">
+                <Link href="/favorites">
+                  💖 View Favorites
+                </Link>
+              </Button>
+              <Button 
+                onClick={() => window.location.reload()} 
+                variant="outline" 
+                className="glass-button"
+              >
+                🔄 Refresh Quotes
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Your seasonal micro-motivator is ready! The ZenQuotes.io API integration provides 
+              fresh daily inspiration. Collect your favorite quotes and enjoy the seasonal 
+              theming that adapts throughout the year.
             </p>
           </CardContent>
         </Card>

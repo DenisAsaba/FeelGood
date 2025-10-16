@@ -15,6 +15,7 @@ A beautiful micro-motivator application built with Next.js 14, featuring seasona
 - **⚙️ Manual Season Override**: Lock any season manually in settings
 - **📱 Responsive Design**: Works beautifully on all device sizes
 - **🔧 TypeScript**: Fully typed for better development experience
+- **💫 Quote Integration**: ZenQuotes.io API with favorites and daily quotes
 
 ## 🛠️ Tech Stack
 
@@ -24,8 +25,9 @@ A beautiful micro-motivator application built with Next.js 14, featuring seasona
 - **UI Components**: shadcn/ui
 - **State Management**: Zustand
 - **Icons**: Lucide React
-- **Charts**: Recharts (ready for data visualization)
+- **Charts**: Recharts (ready for data visualization)  
 - **Animations**: Lottie React (ready for advanced animations)
+- **API**: ZenQuotes.io integration for motivational quotes
 
 ## 🚀 Getting Started
 
@@ -107,6 +109,30 @@ Colors automatically switch based on the current date:
 - **Keyboard Navigation**: Full keyboard accessibility
 - **Screen Reader**: Semantic HTML and proper ARIA labels
 - **Focus Management**: Clear focus indicators and logical tab order
+
+## 🌐 API Integration
+
+### ZenQuotes.io Integration
+
+The app integrates with the free **ZenQuotes.io API** to provide fresh motivational quotes:
+
+- **Random Quotes**: Fetch inspirational quotes on-demand
+- **Quote of the Day**: Daily curated motivational content
+- **Author Search**: Find quotes by specific authors (50/day limit)
+- **Fallback System**: Offline quotes when API is unavailable
+- **Smart Caching**: Efficient quote storage and retrieval
+
+#### API Features:
+- ✅ **Free tier**: 5 requests per second, no API key required
+- ✅ **Reliable**: Automatic fallback to offline quotes
+- ✅ **Fast**: Response caching and optimization
+- ✅ **Rich data**: Author info, quote metadata, and formatting
+
+#### Quote Management:
+- 💖 **Favorites System**: Save and organize preferred quotes
+- 🔄 **Auto-refresh**: Configurable automatic quote updates
+- 📊 **Analytics**: Track views, favorites, and usage stats
+- 🎨 **Seasonal Theming**: Quote display adapts to current season
 
 ## 🔧 Available Scripts
 
